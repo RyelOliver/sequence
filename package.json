@@ -1,0 +1,22 @@
+{
+  "name": "sequence",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sequence.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "keywords": [
+    "javascript",
+    "sequence",
+    "generator",
+    "id"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {}
+}
