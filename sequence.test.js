@@ -59,9 +59,9 @@ describe('A sequence', () => {
             expect(() => sequence.next()).toThrow(INVALID_MAXIMUM);
         });
 
-        describe('For looping', () => {
-            it('Should not loop if the provided integer matches the minimum value', () => {
-                const sequence = Sequence({ min: 0, max: 3, loopFrom: 0 });
+        describe('For cycling', () => {
+            it('Should not cycle if the provided integer matches the minimum value', () => {
+                const sequence = Sequence({ min: 0, max: 3, cycleFrom: 0 });
 
                 expect(sequence.next()).toEqual({ value: 1, done: false });
                 expect(sequence.next()).toEqual({ value: 2, done: false });
@@ -69,8 +69,8 @@ describe('A sequence', () => {
                 expect(sequence.next()).toEqual({ value: undefined, done: true });
             });
 
-            it('Should not loop if the provided integer is greater than the minimum value', () => {
-                const sequence = Sequence({ min: 0, max: 3, loopFrom: 2 });
+            it('Should not cycle if the provided integer is greater than the minimum value', () => {
+                const sequence = Sequence({ min: 0, max: 3, cycleFrom: 2 });
 
                 expect(sequence.next()).toEqual({ value: 1, done: false });
                 expect(sequence.next()).toEqual({ value: 2, done: false });
@@ -78,8 +78,8 @@ describe('A sequence', () => {
                 expect(sequence.next()).toEqual({ value: undefined, done: true });
             });
 
-            it('Should loop from the provided integer once reaching the maximum value', () => {
-                const sequence = Sequence({ min: 4, max: 5, loopFrom: 0 });
+            it('Should cycle from the provided integer once reaching the maximum value', () => {
+                const sequence = Sequence({ min: 4, max: 5, cycleFrom: 0 });
 
                 expect(sequence.next()).toEqual({ value: 5, done: false });
                 expect(sequence.next()).toEqual({ value: 1, done: false });
@@ -87,17 +87,17 @@ describe('A sequence', () => {
             });
 
             describe('With existing values', () => {
-                it('Should not loop if the existing values include all values', () => {
+                it('Should not cycle if the existing values include all values', () => {
                     const existing = [ 1, 2, 3, 4 ];
-                    const sequence = Sequence({ min: 4, max: 5, loopFrom: 0, existing });
+                    const sequence = Sequence({ min: 4, max: 5, cycleFrom: 0, existing });
 
                     expect(sequence.next()).toEqual({ value: 5, done: false });
                     expect(sequence.next()).toEqual({ value: undefined, done: true });
                 });
 
-                it('Should loop, skipping any existing values', () => {
+                it('Should cycle, skipping any existing values', () => {
                     const existing = [ 2, 3 ];
-                    const sequence = Sequence({ min: 4, max: 5, loopFrom: 0, existing });
+                    const sequence = Sequence({ min: 4, max: 5, cycleFrom: 0, existing });
 
                     expect(sequence.next()).toEqual({ value: 5, done: false });
                     expect(sequence.next()).toEqual({ value: 1, done: false });

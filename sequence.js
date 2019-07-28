@@ -9,7 +9,7 @@ const INVALID_STEP_RANGE =
 const INVALID_STEP_RANGE_MAXIMUM =
     'A step range\'s maximum must be greater than its minimum';
 
-function* Sequence({ min = 0, max, step = 1, loopFrom, existing = [] } = {}) {
+function* Sequence({ min = 0, max, step = 1, cycleFrom, existing = [] } = {}) {
     if (!Number.isInteger(min))
         throw Error(INVALID_MINIMUM);
 
@@ -46,8 +46,8 @@ function* Sequence({ min = 0, max, step = 1, loopFrom, existing = [] } = {}) {
         yield value;
     }
 
-    if (loopFrom !== undefined && min !== loopFrom) {
-        value = min = loopFrom;
+    if (cycleFrom !== undefined && min !== cycleFrom) {
+        value = min = cycleFrom;
 
         while (value < max) {
             next();
