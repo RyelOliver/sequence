@@ -1,22 +1,30 @@
 {
-  "name": "sequence",
-  "version": "1.0.0",
-  "description": "",
-  "main": "sequence.js",
-  "scripts": {
-    "test": "jest --watch"
-  },
-  "keywords": [
-    "javascript",
-    "sequence",
-    "generator",
-    "id"
-  ],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "eslint": "^6.1.0",
-    "jest": "^24.8.0"
-  },
-  "dependencies": {}
+	"name": "@ryel/sequence",
+	"version": "1.0.0",
+	"description": "Create a sequence to provide incrementing integers.",
+	"main": "sequence.js",
+	"scripts": {
+		"test": "jest --watch"
+	},
+	"keywords": [
+		"javascript",
+		"sequence",
+		"generator",
+		"id"
+	],
+	"author": "Ryel Oliver <rmuchunku@gmail.com> (https://github.com/RyelOliver)",
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^6.1.0",
+		"jest": "^24.8.0"
+	},
+	"dependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RyelOliver/sequence.git"
+	},
+	"bugs": {
+		"url": "https://github.com/RyelOliver/sequence/issues"
+	},
+	"homepage": "https://github.com/RyelOliver/sequence#readme"
 }
