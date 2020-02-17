@@ -1,11 +1,12 @@
 {
 	"name": "@ryel/sequence",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Create a sequence to provide incrementing integers.",
 	"main": "sequence.js",
 	"scripts": {
 		"test": "jest --watch"
 	},
+	"types": "sequence.d.ts",
 	"keywords": [
 		"javascript",
 		"sequence",
